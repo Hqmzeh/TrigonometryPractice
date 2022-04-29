@@ -5,7 +5,8 @@
 
 .question {
     text-align: center;
-    font-size: larger;
+    font-size: x-large;
+    color: hotpink;
 }
 
 .options {
