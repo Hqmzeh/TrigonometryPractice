@@ -1,62 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <title>Practice Trigonometry</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type='text/css' media='screen' href='theme.css'>
     <script src='main.js'></script>
 </head>
+
 <body>
-    
+
     <div class="heading">Solve the questions</div>
     <div class="question">
         <p>Question</p>
     </div>
     <div class="options">
         <table>
-            
+
             <tr>
-                
-                <td><button id="0" onclick="disableButton('0')">0</button></td>
-                <td><button id="root" onclick="disableButton('root')">√</button> </td>
-                <td><button id="1" onclick="disableButton('1')">1</button>  
-                    <button id="2" onclick="disableButton('2')">2</button>  
-                    <button id="3" onclick="disableButton('3')">3</button>  
+
+                <td><input type="button" id="0" value="0" onclick="disableButton('0', 2, 0)"
+                        style="background-color: transparent;"></td>
+                <td><input type="button" id="root" value="√" onclick="disableButton('root', 1, '√')"
+                        style="background-color: transparent;"> </td>
+                <td><input type="button" id="1" value="1" onclick="disableButton('1', 2, 1)"
+                        style="background-color: transparent;">
+                    <input type="button" id="2" value="2" onclick="disableButton('2', 2, 2)"
+                        style="background-color: transparent;">
+                    <input type="button" id="3" value="3" onclick="disableButton('3', 2, 3)"
+                        style="background-color: transparent;">
                 </td>
             </tr>
-            <tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
             <tr>
-                <td><button id="Negative" onclick="disableButton('Negative')">-</button></td>
+                <td><input type="button" id="Negative" value="-" onclick="disableButton('Negative', 0, -1)"
+                        style="background-color: transparent;"></td>
                 <td></td>
-                <td><button id="divide" onclick="disableButton('divide')">__________</button></td>
+                <td><input type="button" id="divide" value="__________" onclick="disableButton('divide', 3, '1')"
+                        style="background-color: transparent;"></td>
             </tr>
             <tr>
                 <td></td>
-                <td><br><button id="overRoot" onclick="disableButton('overRoot')">√</button> </td>
+                <td><br><input type="button" id="overRoot" value="√" onclick="disableButton('overRoot', 4, '√')"
+                        style="background-color: transparent;"></td>
                 <td><br>
-                    <button id="over1" onclick="disableButton('over1')">1</button>  
-                    <button id="over2" onclick="disableButton('over2')">2</button>  
-                    <button id="over3" onclick="disableButton('over3')">3</button>  
+                    <input type="button" id="over1" value="1" onclick="disableButton('over1', 5, 1/1)"
+                        style="background-color: transparent;">
+                    <input type="button" id="over2" value="2" onclick="disableButton('over2', 5, 1/2)"
+                        style="background-color: transparent;">
+                    <input type="button" id="over3" value="3" onclick="disableButton('over3', 5, 1/3)"
+                        style="background-color: transparent;">
                 </td>
             </tr>
             <tr>
-                <td><br><button id="Undefined" onclick="disableButton('Undefined')">Undefined</button></td>  
-            </tr>
-            
-
-        </table>
-        <table>
-            
-
-            <tr>
-                <td><br><td><br><button id="Submit" onclick="disableButton('Submit')">Submit</button></td>  </td>
+                <td><br><input type="button" id="Undefined" onclick="disableButton('Undefined', null)">Undefined</label>
+                </td>
             </tr>
         </table>
-        
-        
+
+        <br>
+        <td><br><button id="Submit" onclick="submitAnswer()">Submit</button>
+
+
+
     </div>
-    
+
 
 </body>
+
 </html>
