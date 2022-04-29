@@ -1,22 +1,23 @@
 var variables = [1, 1, 1, 1, 1, 1]
 var userAnswer = 1
 
-const trigonometricFunction = ["sin", "cos", "tan"]
+const trigonometricFunction = ["sin", "cos", "tan"] // assign the functions
 const theta = [0, 30, 45, 60, 90, 180, 270, 360]
 const coterminal = [0, 1]
 var randomTrigonometricFunction = trigonometricFunction[Math.floor(Math.random() * trigonometricFunction.length)]
-var randomCoterminal = 360 * coterminal[Math.floor(Math.random() * coterminal.length)]
+var randomCoterminal = 360 * coterminal[Math.floor(Math.random() * coterminal.length)] //randomize stuff from the arrays at top to make a unique value each refresh 
 var randomTheta = theta[Math.floor(Math.random() * theta.length)] + randomCoterminal
-var radianTheta = randomTheta * Math.PI / 180
+var radianTheta = randomTheta * Math.PI / 180 //converting from degree to radians because Math.sin requires radians
 
+//here is some stuff that is standard nowadays so I copied it because I have no idea how this work. it add sleep function
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 async function getQuestion() {
-    document.getElementById("theQuestion").innerText = randomTrigonometricFunction + "(" + randomTheta + ")"
+    document.getElementById("theQuestion").innerText = randomTrigonometricFunction + "(" + randomTheta + ")" //add the question to the screen
 
-    for (i = 15; i > -1; --i) {
+    for (i = 15; i > -1; --i) { //a countdown that uses sleep the "async" at the top make this work remove it and it wont
         document.getElementById("theTimer").innerText = "00:" + i
         await sleep(1000);
 
@@ -28,7 +29,7 @@ async function getQuestion() {
 
     }
 }
-
+//I am checking for color value so I can toggle the userAnswer values as I like
 function disableButton(ID, arrayToBeReplaced, value) {
     if (document.getElementById(ID).style.backgroundColor == "transparent") {
         document.getElementById(ID).style.backgroundColor = "lightgreen"
@@ -39,7 +40,8 @@ function disableButton(ID, arrayToBeReplaced, value) {
     }
 }
 
-
+//some annoying if statments that checks for √ and root the number after it
+//and some more that does the same but with sin. I used parseFloat and .toFixed to make the answer as 0.0 to help with correcting the questions
 function submitAnswer() {
     if (document.getElementById("Submit").value == "Reset") {
         window.location.reload("Refresh")
@@ -71,6 +73,7 @@ function submitAnswer() {
             //alert("tan for " + randomTheta +" is "+ answer)
         }
 
+        //finally we just check the answer with yet another if statment...
         if (answer == parseFloat(userAnswer.toFixed(1))) {
             document.getElementById("result").style.color = "green"
             document.getElementById("result").innerHTML = "Correct"
