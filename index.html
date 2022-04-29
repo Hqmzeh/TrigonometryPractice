@@ -8,11 +8,11 @@
     <script src='main.js'></script>
 </head>
 
-<body>
+<body onload="getQuestion()">
 
     <div class="heading">Solve the questions</div>
     <div class="question">
-        <p>Question</p>
+        <p id="theQuestion"></p>
     </div>
     <div class="options">
         <table>
@@ -61,13 +61,13 @@
                 </td>
             </tr>
             <tr>
-                <td><br><input type="button" id="Undefined" onclick="disableButton('Undefined', null)">Undefined</label>
+                <td><br><input type="button" value="Undefined" id="Undefined" onclick="disableButton('Undefined', 0, NaN)" style="background-color: transparent;">
                 </td>
             </tr>
         </table>
 
         <br>
-        <td><br><button id="Submit" onclick="submitAnswer()">Submit</button>
+        <td><br><p id="result"></p><input type="button" value="Submit" id="Submit" onclick="submitAnswer()">
 
 
 

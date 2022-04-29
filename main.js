@@ -1,4 +1,16 @@
 var variables = [1, 1, 1, 1, 1, 1]
+var userAnswer = 1
+
+const trigonometricFunction = ["sin", "cos", "tan"]
+const theta = [0,30, 45, 60, 90, 180]
+const coterminal = [0, 1, 2]
+var randomTrigonometricFunction = trigonometricFunction[Math.floor(Math.random() * trigonometricFunction.length)]
+var randomCoterminal = 360 * coterminal[Math.floor(Math.random() * coterminal.length)]
+var randomTheta = theta[Math.floor(Math.random() * theta.length)] + randomCoterminal
+var radianTheta = randomTheta * Math.PI / 180
+function getQuestion() {
+    document.getElementById("theQuestion").innerText = randomTrigonometricFunction + "(" + randomTheta + ")";
+}
 
 function disableButton(ID, arrayToBeReplaced, value) {
     if (document.getElementById(ID).style.backgroundColor == "transparent") {
@@ -10,9 +22,13 @@ function disableButton(ID, arrayToBeReplaced, value) {
     }
 }
 
-var answer = 1
 
 function submitAnswer() {
+    if (document.getElementById("Submit").value == "Reset")
+    {
+        window.location.reload("Refresh") 
+    } else {
+
     var multiplicies = [variables[0], 1, 1]
     if (variables[1] == "√") {
         var t = Math.sqrt(variables[2])
@@ -27,6 +43,31 @@ function submitAnswer() {
     } else {
         multiplicies.splice(2, 1, variables[5])
     }
-    answer *= multiplicies.reduce((a, b) => a * b, 1)
-    alert(answer)
+    userAnswer *= multiplicies.reduce((a, b) => a * b, 1)
+    if (randomTrigonometricFunction == "sin")
+    {
+        answer= parseFloat(Math.sin(radianTheta).toFixed(1))
+        //alert("sin for " + randomTheta +" is " + answer)
+    } 
+    else if (randomTrigonometricFunction == "cos")
+    {
+        answer = parseFloat(Math.cos(radianTheta).toFixed(1))
+        //alert("cos for " + randomTheta +" is " + answer)
+    }
+    else
+    {
+        answer = parseFloat(Math.tan(radianTheta).toFixed(1))
+        //alert("tan for " + randomTheta +" is "+ answer)
+    }
+
+    if (answer == parseFloat(userAnswer.toFixed(1)))
+    {
+        document.getElementById("result").innerHTML = "Correct"
+        document.getElementById("Submit").value = "Reset"
+    } 
+    else{
+        document.getElementById("result").innerHTML = "Incorrect"
+        document.getElementById("Submit").value = "Reset"
+    }
+}
 }
