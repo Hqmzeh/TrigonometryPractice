@@ -23,7 +23,7 @@ async function getQuestion() {
 
         if (i == 0) {
             document.getElementById("result").style.color = "red"
-            document.getElementById("result").innerHTML = "Incorrect"
+            document.getElementById("result").innerHTML = "Timed Out"
             document.getElementById("Submit").value = "Reset"
         }
 
