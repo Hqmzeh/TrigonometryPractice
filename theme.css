@@ -1,0 +1,29 @@
+/*body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}*/
+
+.heading {
+    text-align: center;
+    font-size: x-large;
+}
+
+.question {
+    text-align: center;
+    font-size: larger;
+}
+
+.options {
+    text-align: center;
+}
+table {
+    margin: 0 auto; 
+    table-layout:fixed;
+}
+
+button{
+    font-weight: bold;
+    font-size: large;
+}
