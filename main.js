@@ -9,8 +9,24 @@ var randomCoterminal = 360 * coterminal[Math.floor(Math.random() * coterminal.le
 var randomTheta = theta[Math.floor(Math.random() * theta.length)] + randomCoterminal
 var radianTheta = randomTheta * Math.PI / 180
 
-function getQuestion() {
-    document.getElementById("theQuestion").innerText = randomTrigonometricFunction + "(" + randomTheta + ")";
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function getQuestion() {
+    document.getElementById("theQuestion").innerText = randomTrigonometricFunction + "(" + randomTheta + ")"
+
+    for (i = 15; i > -1; --i) {
+        document.getElementById("theTimer").innerText = "00:" + i
+        await sleep(1000);
+
+        if (i == 0) {
+            document.getElementById("result").style.color = "red"
+            document.getElementById("result").innerHTML = "Incorrect"
+            document.getElementById("Submit").value = "Reset"
+        }
+
+    }
 }
 
 function disableButton(ID, arrayToBeReplaced, value) {
