@@ -9,7 +9,7 @@ This is just a reverse calculator that help you memorize simple trigonometric fu
 
 -inputs to choose your answer that do not care in which order your pressed them
 
--no specific quadrant values support
+-quadrant values support
 
 -"Undefined" does work now !
 

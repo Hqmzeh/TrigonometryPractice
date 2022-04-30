@@ -2,7 +2,7 @@ var variables = [1, 1, 1, 1, 1, 1]
 var userAnswer = 1
 
 const trigonometricFunction = ["sin", "cos", "tan"] // assign the functions
-const theta = [0, 30, 45, 60, 90, 180, 270, 360]
+const theta = [0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330, 360]
 const coterminal = [0, 1]
 var randomTrigonometricFunction = trigonometricFunction[Math.floor(Math.random() * trigonometricFunction.length)]
 var randomCoterminal = 360 * coterminal[Math.floor(Math.random() * coterminal.length)] //randomize stuff from the arrays at top to make a unique value each refresh 
